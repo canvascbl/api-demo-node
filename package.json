@@ -1,0 +1,25 @@
+{
+  "name": "api-demo-node",
+  "version": "1.0.0",
+  "description": "A demo of the CanvasCBL API in Node.JS",
+  "main": "index.js",
+  "repository": "https://github.com/canvascbl/api-demo-node",
+  "author": "iamtheyammer <iamtheyammer@gmail.com>",
+  "license": "GPLv3",
+  "private": false,
+  "dependencies": {
+    "axios": "^0.19.2",
+    "cookie-parser": "^1.4.4",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "qs": "^6.9.1"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "format": "prettier --write \"**/*.js\"",
+    "formatcheck": "prettier -c \"**/*.js\""
+  },
+  "devDependencies": {
+    "prettier": "^1.19.1"
+  }
+}
