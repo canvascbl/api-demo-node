@@ -1,4 +1,5 @@
-require("dotenv").config();
+const env = require("./env");
+
 const express = require("express");
 const app = express();
 app.use(require("cookie-parser")());
@@ -20,6 +21,5 @@ app.get("/tokens", require("./routes/tokens"));
 // Get grades
 app.get("/grades", require("./routes/grades"));
 
-const port = process.env.PORT ? process.env.PORT : 8002;
-console.log(`CanvasCBL API Demo in Node.JS Listening on ${port}!`);
-app.listen(port);
+console.log(`CanvasCBL API Demo in Node.JS Listening on port ${env.port}!`);
+app.listen(env.port);

@@ -1,3 +1,6 @@
+// loads env vars from .env
+require("dotenv").config();
+
 const env = {};
 
 function getEnvOrPanic(envName, friendlyName) {
@@ -27,5 +30,6 @@ getEnvOrPanic("CLIENT_SECRET", "clientSecret");
 getEnvOrPanic("REDIRECT_URI", "redirectUri");
 
 getEnv("CANVASCBL_API_URI", "canvascblApiUri", "https://api.canvascbl.com");
+getEnv("PORT", "port", "8002");
 
 module.exports = env;
