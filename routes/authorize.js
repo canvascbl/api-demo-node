@@ -16,7 +16,7 @@ module.exports = (req, res) => {
     purpose: "CanvasCBL API Test from Node.JS"
   })}`;
 
-  if (req.query.redirect.toLowerCase() === "false") {
+  if (req.query.redirect && req.query.redirect.toLowerCase() === "false") {
     res.send(finalRedirect);
     return;
   }

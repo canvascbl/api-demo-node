@@ -1,5 +1,6 @@
 const axios = require("axios");
 const env = require("../env");
+const refresh = require("../util/refresh");
 
 module.exports = async (req, res) => {
   let accessToken = req.cookies.access_token;
@@ -49,17 +50,7 @@ module.exports = async (req, res) => {
   ) {
     // need to refresh token
     try {
-      const refreshResp = await axios({
-        method: "post",
-        url: `${env.canvascblApiUri}/api/oauth2/token`,
-        params: {
-          grant_type: "refresh_token",
-          client_id: env.clientId,
-          client_secret: env.clientSecret,
-          redirect_uri: env.redirectUri,
-          refresh_token: refreshToken
-        }
-      });
+      const refreshResp = await refresh(refreshToken);
 
       accessToken = refreshResp.data.access_token;
       gradesError = null;

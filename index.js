@@ -21,5 +21,8 @@ app.get("/tokens", require("./routes/tokens"));
 // Get grades
 app.get("/grades", require("./routes/grades"));
 
+// Clear all
+app.get("/clear", require("./routes/clear"));
+
 console.log(`CanvasCBL API Demo in Node.JS Listening on port ${env.port}!`);
 app.listen(env.port);

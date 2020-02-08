@@ -71,7 +71,7 @@ module.exports = async (req, res) => {
   // Consider saving them to your database!
 
   res.send(
-    `Successful token grant! Tokens have been saved as cookies so you can use /grant, but the response is below:<br>${JSON.stringify(
+    `Successful token grant! Tokens have been saved as cookies so you can use /grades, but the response is below:<br>${JSON.stringify(
       tokenData,
       null,
       2

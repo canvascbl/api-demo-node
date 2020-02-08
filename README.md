@@ -32,10 +32,20 @@ the URL you'll be sent to, append `&redirect=false`.
 2. Once you've signed into CanvasCBL and authorized the request, you'll be redirected to
 `http://localhost:8002/response`. This is your Redirect URI, and you should see the tokens from the new grant!
 3. Get some grades: visit `http://localhost:8002/grades` to see them.
+4. When you're done, you can visit `http://localhost:8002/clear` to clear all cookies and void
+the grant.
 
 That's it!
 
-You can also use `/tokens` to see all of the stored tokens (also in your cookies).
+You can also use `/tokens` to see all the stored tokens (also in your cookies).
+
+## Note (**read this**)
+
+You'll see that all API URLs in the code look like this: `${env.canvascblApiUri}/path`. This is to
+support the `CANVASCBL_API_URI` environment variable. In your code, you shouldn't do this-- just
+use `https://api.canvascbl.com/path`. It'll never change.
+
+That functionality is there for internal usage.
 
 ## Environment Variables
 
